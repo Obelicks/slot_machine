@@ -31,9 +31,7 @@ def main():
     name = hello()
     
     balance = deposit()
-    print(f"Player {name} has ${balance} on his account")
-
     player = Player(name,balance)
-
+    player.show()
 
 main()
