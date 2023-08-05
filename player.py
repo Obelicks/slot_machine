@@ -8,3 +8,9 @@ class Player:
     
     def update_balance(self,amount):
         self.balance += amount
+        
+    def check_balance(self, amount):
+        if amount > self.balance:
+            return False
+        else:
+            return True
