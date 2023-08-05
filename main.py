@@ -2,6 +2,16 @@ from player import Player
 
 MAX_LINES = 3
 
+def hello():
+    #Hello welcomes the player/user to the game. It asks for the players name and asks them to confirm with a (y/n) 
+    name = input("\nWELCOME TO OBELICKS' SLOT MACHINE\nWhat is your name? \n")
+
+    yn = input(f"your name is {name}. Is that correct (y/n)")
+    while yn in ["n", "N"]:
+        name = input("Sorry, lets try that again!\n What is your name?")
+        
+        yn = input(f"your name is {name}. Is that correct (y/n)")
+    return name
 
 def deposit():
     #allows the user to enter the number of money they want to deposit for the game
@@ -18,16 +28,9 @@ def deposit():
             print("Invalid input. Only whole numbers are allowed!")
     return amount
 
-def hello():
-    name = input("\nWELCOME TO OBELICKS' SLOT MACHINE\nWhat is your name? \n")
 
-    yn = input(f"your name is {name}. Is that correct (y/n)")
-    while yn in ["n", "N"]:
-        name = input("Sorry, lets try that again!\n What is your name?")
-        
-        yn = input(f"your name is {name}. Is that correct (y/n)")
-    return name
 def main():
+    
     name = hello()
     
     balance = deposit()
