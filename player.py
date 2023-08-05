@@ -1,6 +1,10 @@
 class Player:
-    def __init__(self,name,money) -> None:
+    def __init__(self,name,balance) -> None:
         self.name = name
-        self.money = money
+        self.balance = balance
+
     def show(self):
-        print(f"Player: {self.name} has ${self.money} on his account")
+        print(f"Player: {self.name} has ${self.balance} on his account")
+    
+    def update_balance(self,amount):
+        self.balance += amount
