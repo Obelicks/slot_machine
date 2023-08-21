@@ -39,4 +39,14 @@ class Slotmachine:
                 else:
                     print(column[row])
 
-       
+    def print_win(self,lines, bet, value):
+        winnings = 0
+        for line in range(lines):
+            symbol = self.state[0][line]
+            for column in self.state:
+                symbol_to_check = column[line]
+                if symbol_to_check != symbol:
+                    break
+            else:
+                winnings += value[symbol] *bet
+        return winnings

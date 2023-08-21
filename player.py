@@ -1,3 +1,8 @@
+#This class is responsible for handling the user input and storing it the object
+#of class Player. 
+#When initialized the player is asked their name and how much money they would like 
+#to deposit
+
 class Player:
     def __init__(self) -> None:
         self.name = hello()
@@ -15,14 +20,14 @@ class Player:
         else:
             return True
     
-    def get_total_bet(self):
+    def get_total_bet(self) -> (int,int):
         while True:
             lines = get_number_of_lines()
             bet = place_bet()
             total_bet = lines*bet
             if self.check_balance(total_bet):
                 print(f"you are betting ${bet} on {lines} lines. Total is ${total_bet}")
-                return total_bet
+                return (lines,bet)
             print(f"You cant afford betting {total_bet} you only have {self.balance}")
 
 MAX_LINES = 3
